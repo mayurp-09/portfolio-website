@@ -5,118 +5,103 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 8%;   /* reduced from 61px */
-  z-index: 2;
+  padding: 24px 8%;
+  z-index: 10;
   background-color: var(--color-bg);
 }
 
-/* Logo / Title */
+/* Logo */
 .title {
-  font-size: 22px;     /* reduced from 30px */
+  font-size: 22px;
   font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
-  letter-spacing: 0.5px; /* modern touch */
+  letter-spacing: 0.5px;
 }
-.title:hover{
+
+.title:hover {
   background: linear-gradient(
     90deg,
-    rgba(138, 43, 226, 1) 0%,   /* violet */
-    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
+    rgba(138, 43, 226, 1) 0%,
+    rgba(0, 191, 255, 1) 100%
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
 
-/* Hide menu button for desktop */
+/* Hide menu button on desktop */
 .menuBtn {
   display: none;
+  cursor: pointer;
 }
 
 /* Menu container */
 .menu {
   display: flex;
+  align-items: center;
 }
 
 /* Menu items */
 .menuItems {
   display: flex;
-  gap: 32px;        /* reduced from 47px */
+  gap: 32px;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Links */
 .menuItems a {
-  font-size: 16px;   /* reduced from 25px */
+  font-size: 16px;
   font-weight: 500;
   color: var(--color-text);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
-.menuItems a:hover{
+
+.menuItems a:hover {
   background: linear-gradient(
     90deg,
-    rgba(138, 43, 226, 1) 0%,   /* violet */
-    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
+    rgba(138, 43, 226, 1) 0%,
+    rgba(0, 191, 255, 1) 100%
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
-.menuItems a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background-color: var(--color-bg);
-  transition: 0.3s ease;
-}
 
-.menuItems a:hover::after {
-  width: 100%;
-}
+/* ========================= */
+/* MOBILE NAVBAR */
+/* ========================= */
 
-@media screen and (max-width: 830px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 11px;
-    z-index: 3;
-  }
+@media (max-width: 830px) {
 
   .menuBtn {
     display: block;
-    cursor: pointer;
   }
 
   .menuItems {
-    display: none;
+    position: absolute;
+    top: 70px;
+    right: 8%;
     flex-direction: column;
     align-items: center;
-    gap: 13px;
-    border-radius: 10px;
-    background: rgb(25, 55, 109);
+    gap: 18px;
+    padding: 20px;
+    border-radius: 12px;
+
     background: linear-gradient(
       0deg,
       rgba(25, 55, 109, 0.2) 0%,
       rgba(25, 55, 109, 1) 100%
     );
-    padding: 24px 33px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    display: none;
   }
 
   .menuOpen {
     display: flex;
-    z-index: 1;
   }
 }

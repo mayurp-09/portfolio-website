@@ -4,17 +4,18 @@
   position: relative;
   background-color: rgba(12, 12, 12, 0.6);
   border-radius: 16px;
-  padding: 48px;              /* reduced from 73px */
-  margin-top: 100px;          /* reduced from 129px */
+  padding: 48px;
+  margin-top: 100px;
   margin-left: 8%;
   margin-right: 8%;
   z-index: 1;
+  overflow: hidden; /* prevents horizontal scroll */
 }
 
 /* Section Title */
 .title {
   color: var(--color-text);
-  font-size: 24px;            /* reduced from 35px */
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -31,7 +32,7 @@
 
 /* Image */
 .aboutImage {
-  width: 30%;                 /* reduced from 35% */
+  width: 30%;
   max-width: 320px;
 }
 
@@ -40,7 +41,7 @@
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 32px;                  /* reduced from 50px */
+  gap: 32px;
 }
 
 /* Single Item */
@@ -51,7 +52,7 @@
   gap: 20px;
   border-radius: 16px;
   list-style: none;
-  padding: 18px;              /* reduced from 25px */
+  padding: 18px;
 
   background-image: linear-gradient(
     90deg,
@@ -70,51 +71,71 @@
 
 /* Item Title */
 .aboutItem h3 {
-  font-size: 18px;            /* reduced from 25px */
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
 /* Item Description */
 .aboutItem p {
-  font-size: 15px;            /* reduced from 25px */
+  font-size: 15px;
   line-height: 1.6;
   opacity: 0.9;
 }
-/* Tablet & Mobile */
+
+/* ========================= */
+/* RESPONSIVE FIX START */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 40px;
+  }
+
+  .aboutImage {
+    width: 35%;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  .about .content {
-    flex-direction: column !important; /* stack image and info */
+  .container {
+    padding: 30px;
+    margin-top: 60px;
+  }
+
+  .content {
+    flex-direction: column;  /* stack image + content */
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: 30px;
+  }
+
+  .aboutImage {
+    width: 60%;
+    max-width: 260px;
+  }
+
+  .aboutItems {
     width: 100%;
-  }
-
-  .about .aboutImage {
-    width: 60%;       /* image on top */
-    max-width: 280px;
-    margin-bottom: 16px;
-  }
-
-  .about .aboutItems {
-    width: 100%;      /* full width below image */
     gap: 20px;
   }
 
-  .about .aboutItem {
-    flex-direction: column;  /* icon + text stacked */
+  .aboutItem {
+    flex-direction: column; /* stack icon + text */
     align-items: center;
     text-align: center;
     padding: 16px;
   }
 
-  .about .aboutItem h3 {
+  .aboutItem h3 {
     font-size: 16px;
-    margin-bottom: 4px;
   }
 
-  .about .aboutItem p {
+  .aboutItem p {
     font-size: 14px;
   }
 }
