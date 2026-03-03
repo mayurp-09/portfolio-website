@@ -1,0 +1,122 @@
+@import "../../vars.css";
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 8%;   /* reduced from 61px */
+  z-index: 2;
+  background-color: var(--color-bg);
+}
+
+/* Logo / Title */
+.title {
+  font-size: 22px;     /* reduced from 30px */
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: 0.5px; /* modern touch */
+}
+.title:hover{
+  background: linear-gradient(
+    90deg,
+    rgba(138, 43, 226, 1) 0%,   /* violet */
+    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* Hide menu button for desktop */
+.menuBtn {
+  display: none;
+}
+
+/* Menu container */
+.menu {
+  display: flex;
+}
+
+/* Menu items */
+.menuItems {
+  display: flex;
+  gap: 32px;        /* reduced from 47px */
+  list-style: none;
+}
+
+/* Links */
+.menuItems a {
+  font-size: 16px;   /* reduced from 25px */
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.menuItems a:hover{
+  background: linear-gradient(
+    90deg,
+    rgba(138, 43, 226, 1) 0%,   /* violet */
+    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.menuItems a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-bg);
+  transition: 0.3s ease;
+}
+
+.menuItems a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+
+  .menuBtn {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    border-radius: 10px;
+    background: rgb(25, 55, 109);
+    background: linear-gradient(
+      0deg,
+      rgba(25, 55, 109, 0.2) 0%,
+      rgba(25, 55, 109, 1) 100%
+    );
+    padding: 24px 33px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .menuOpen {
+    display: flex;
+    z-index: 1;
+  }
+}

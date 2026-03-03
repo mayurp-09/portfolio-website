@@ -7,17 +7,22 @@ export const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I'm Ada</h1>
+        <h1 className={styles.title}>Hi, I'm Mayur</h1>
         <p className={styles.description}>
-          I'm a full-stack developer with 5 years of experience using React and
-          NodeJS. Reach out if you'd like to learn more!
+          Entry level Software Developer with hands-on experience in React, JavaScript, SQL, and Core Java.
+          Understanding of Data Structures, OOP and DBMS with practical exposure to building front-end projects and writing optimized SQL queries.
         </p>
-        <a href="mailto:myemail@email.com" className={styles.contactBtn}>
-          Contact Me
-        </a>
+        <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=mayurgpande@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.contactBtn}
+>
+  Contact
+</a>
       </div>
       <img
-        src={getImageUrl("hero/heroImage.png")}
+        src={getImageUrl("hero/img.png")}
         alt="Hero image of me"
         className={styles.heroImg}
       />

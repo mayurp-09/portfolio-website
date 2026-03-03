@@ -1,0 +1,36 @@
+.container {
+  margin-top: 100px;        /* more breathing space */
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+/* Section Title */
+.title {
+  font-size: 24px;          /* match other sections */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 per row */
+  gap: 28px;
+  justify-items: center;
+}
+@media (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

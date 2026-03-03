@@ -5,10 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 49px;
+  margin-top: 60px;
+  margin-left: 8%;
+  margin-right: 8%;
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .content {
@@ -17,95 +17,160 @@
   align-items: flex-start;
   color: var(--color-text);
   z-index: 1;
+  max-width: 520px;
 }
 
+/* Main Heading */
 .title {
-  font-size: 72px;
-  font-weight: 900;
-  margin-bottom: 33px;
+  font-size: 48px;      /* reduced from 72px */
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: white;
   font-family: var(--font-roboto);
+  line-height: 1.2;
+
+  /* Updated gradient: violet → blue */
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 70%,
-    rgba(255, 255, 255, 0) 120%
+    rgba(138, 43, 226, 1) 0%,   /* violet */
+    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
 
+/* Description */
 .description {
-  font-size: 30px;
-  font-family: var(--font-roboto);
-  margin-bottom: 52px;
+  font-size: 18px;     /* reduced from 30px */
+  margin-bottom: 32px;
+  line-height: 1.6;
+  opacity: 0.9;
+  background: linear-gradient(
+    90deg,
+    rgba(138, 43, 226, 1) 0%,   /* violet */
+    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
+/* Button */
 .contactBtn {
   text-decoration: none;
   background-color: var(--color-primary);
-  color: var(--color-text);
-  border-radius: 100px;
-  font-size: 30px;
+  border-radius: 50px;
+  font-size: 16px;     /* reduced from 30px */
   font-weight: 600;
-  padding: 17px 26px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 12px 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(138, 43, 226, 1) 0%,   /* violet */
+    rgba(0, 191, 255, 1) 100%    /* deep sky blue */
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.contactBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
 }
 
+/* List Links Hover Effect */
+.links li a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.links li a:hover {
+  color: #8a2be2; /* violet */
+  transform: translateY(-3px);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
 .heroImg {
-  width: 50%;
+  width: 42%;          /* reduced from 50% */
+  max-width: 420px;
   z-index: 1;
 
   animation-name: floating;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
+/* Floating animation */
 @keyframes floating {
   0% {
-    transform: translate(0, 0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translate(0, 10px);
+    transform: translateY(12px);
   }
   100% {
-    transform: translate(0, -0px);
+    transform: translateY(0px);
   }
 }
 
+/* Blur effects refined */
 .topBlur {
   position: absolute;
-  width: 50vw;
-  height: 50vw;
-  min-width: 350px;
-  min-width: 350px;
-  top: -128px;
-  left: -10vw;
-  border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
+  width: 40vw;
+  height: 40vw;
+  min-width: 200px;
+  top: -100px;
+  left: -8vw;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  opacity: 0.25;
+  filter: blur(120px);
   z-index: 0;
 }
 
 .bottomBlur {
   position: absolute;
-  width: 70vw;
-  height: 50vw;
-  min-width: 350px;
+  width: 50vw;
+  height: 40vw;
   min-width: 250px;
-  top: 246px;
-  right: -25vw;
-  border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
-  filter: blur(100px);
+  top: 200px;
+  right: -20vw;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  opacity: 0.25;
+  filter: blur(120px);
   z-index: 0;
 }
 
-@media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column-reverse;
+@media (max-width: 1024px) {
+  .hero .title {
+    font-size: 40px;
   }
+  .hero .description {
+    font-size: 16px;
+  }
+  .heroImg {
+    width: 38%;
+    max-width: 360px;
+  }
+}
 
-  .content {
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+  .hero .title {
+    font-size: 32px;
+  }
+  .hero .description {
+    font-size: 14px;
+  }
+  .heroImg {
+    width: 50%;
+    margin-top: 20px;
   }
 }
