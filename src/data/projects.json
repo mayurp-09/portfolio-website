@@ -14,5 +14,13 @@
     "skills": ["HTML", "CSS", "Javascript"],
     "demo": "https://mayurp-09.github.io/image-editor/",
     "source": "https://github.com/mayurp-09/image-editor"
+  },
+  {
+    "title": "Image Editor",
+    "imageSrc": "projects/editor.png",
+    "description": "A web-based image editor built with JavaScript that allows users to upload and apply real-time image adjustments.",
+    "skills": ["HTML", "CSS", "Javascript"],
+    "demo": "https://mayurp-09.github.io/image-editor/",
+    "source": "https://github.com/mayurp-09/image-editor"
   }
 ]
