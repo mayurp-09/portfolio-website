@@ -5,6 +5,7 @@ import { Contact } from "./components/Contact/Contact";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Projects} from "./components/Projects/Projects"
 import { Skills } from "./components/Skills/Skills";
+import { Certificates } from "./components/Certificate/Certificates";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <About/>
       <Skills/>
       <Projects/>
+      <Certificates/>
       <Contact/>
 
 

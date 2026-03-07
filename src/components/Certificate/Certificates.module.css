@@ -1,0 +1,42 @@
+.container {
+  margin-top: 100px;
+  padding: 0 5%;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 400px;
+  max-width: 90%;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.arrow {
+  font-size: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
