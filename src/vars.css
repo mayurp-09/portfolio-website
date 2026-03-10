@@ -1,11 +1,15 @@
 :root {
-  /* Colours */
-  --color-text: #fff;
-  --color-primary: #576cbc;
-  --color-secondary: #19376d;
-  --color-dark: #0b2447;
-  --color-bg: #04152d;
+  /* Modern Neon Color Palette */
+  --color-text: #f0f6fc;      /* Soft White */
+  --color-primary: #58a6ff;   /* Electric Neon Blue */
+  --color-secondary: #161b22; /* Card Background */
+  --color-dark: #0d1117;      /* Section Background */
+  --color-bg: #04070b;        /* Deepest Black-Blue */
+
+  /* Glow Effects */
+  --neon-glow: 0 0 15px rgba(88, 166, 255, 0.3);
+  --neon-border: 1px solid rgba(88, 166, 255, 0.2);
 
   /* Fonts */
-  --font-roboto: "Roboto";
+  --font-roboto: "Outfit", sans-serif;
 }

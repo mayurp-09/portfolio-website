@@ -1,38 +1,34 @@
 @import "../../vars.css";
 
 .navbar {
-  position: relative;
+  position: fixed; /* Changed to fixed so it stays at the top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 8%;
-  z-index: 10;
-  background-color: var(--color-bg);
+  padding: 16px 8%;
+  z-index: 100;
+  /* Glassmorphism Effect */
+  background-color: rgba(4, 7, 11, 0.8); 
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(88, 166, 255, 0.1);
 }
 
 /* Logo */
 .title {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 800;
   color: var(--color-text);
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
 .title:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(138, 43, 226, 1) 0%,
-    rgba(0, 191, 255, 1) 100%
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-/* Hide menu button on desktop */
-.menuBtn {
-  display: none;
-  cursor: pointer;
+  color: var(--color-primary);
+  text-shadow: 0 0 12px rgba(88, 166, 255, 0.6);
 }
 
 /* Menu container */
@@ -41,33 +37,37 @@
   align-items: center;
 }
 
-/* Menu items */
+/* Menu button for mobile */
+.menuBtn {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  filter: invert(1); /* Ensures the icon is white/visible */
+}
+
+/* Desktop Menu items */
 .menuItems {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Links */
 .menuItems a {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
   transition: all 0.3s ease;
-  position: relative;
+  opacity: 0.8;
 }
 
+/* Neon Hover for Links */
 .menuItems a:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(138, 43, 226, 1) 0%,
-    rgba(0, 191, 255, 1) 100%
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  opacity: 1;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
 }
 
 /* ========================= */
@@ -75,6 +75,9 @@
 /* ========================= */
 
 @media (max-width: 830px) {
+  .navbar {
+    padding: 16px 5%;
+  }
 
   .menuBtn {
     display: block;
@@ -83,25 +86,27 @@
   .menuItems {
     position: absolute;
     top: 70px;
-    right: 8%;
+    right: 5%;
     flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    padding: 20px;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 30px;
+    width: 200px;
     border-radius: 12px;
-
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0%,
-      rgba(25, 55, 109, 1) 100%
-    );
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-
+    /* Mobile Menu Glass Look */
+    background: rgba(22, 27, 34, 0.95);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     display: none;
   }
 
   .menuOpen {
     display: flex;
+    animation: slideIn 0.3s ease-out;
   }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

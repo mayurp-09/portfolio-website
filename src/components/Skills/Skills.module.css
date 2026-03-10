@@ -2,19 +2,21 @@
 
 .container {
   margin-top: 100px;
-  padding: 0 5%;              /* use padding instead of margin */
+  padding: 0 8%;
   width: 100%;
   box-sizing: border-box;
 }
 
 /* Section Title */
 .title {
-  font-size: 24px;
+  color: var(--color-primary); /* Neon Blue */
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
 }
 
 /* Content Wrapper */
@@ -28,93 +30,97 @@
 .skills {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 28px;
+  /* Better spacing for a professional look */
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 40px;
   justify-items: center;
 }
 
-/* Single Skill */
+/* Single Skill Card */
 .skill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  transition: transform 0.3s ease;
+  gap: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.skill:hover {
-  transform: translateY(-6px);
-}
-
-/* Icon Circle */
+/* Icon Container with Neon Halo */
 .skillImageContainer {
-  background-color: var(--color-secondary);
+  background-color: rgba(22, 27, 34, 0.8); /* Dark Glass */
+  border: 1px solid rgba(88, 166, 255, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 95px;
-  height: 95px;
-  transition: 0.3s ease;
+  width: 100px;
+  height: 100px;
+  transition: all 0.4s ease;
+  position: relative;
 }
 
-.skillImageContainer:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+/* Hover State - The "Glow" */
+.skill:hover {
+  transform: translateY(-10px);
 }
 
-/* Icon */
+.skill:hover .skillImageContainer {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+  background-color: rgba(88, 166, 255, 0.05);
+}
+
+/* Icon Styling */
 .skillImageContainer img {
-  width: 48px;
+  width: 50px;
+  /* Adds a slight glow to the icon itself */
+  filter: drop-shadow(0 0 5px rgba(88, 166, 255, 0.2));
+  transition: transform 0.4s ease;
+}
+
+.skill:hover img {
+  transform: scale(1.1);
 }
 
 /* Skill Text */
 .skill p {
+  color: var(--color-text);
   font-size: 16px;
   font-family: var(--font-roboto);
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
-/* Tablet adjustments */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 4%;
-  }
+.skill:hover p {
+  color: var(--color-primary);
+}
 
-  .title {
-    font-size: 20px;
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
   }
 
   .skillImageContainer {
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
   }
 
   .skillImageContainer img {
     width: 40px;
   }
-
-  .skill p {
-    font-size: 14px;
-  }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .container {
-    padding: 0 3%;
+    padding: 0 5%;
   }
-
-  .skillImageContainer {
-    width: 65px;
-    height: 65px;
-  }
-
-  .skillImageContainer img {
-    width: 34px;
-  }
-
-  .skill p {
-    font-size: 13px;
+  
+  .skills {
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row on small screens */
+    gap: 20px;
   }
 }

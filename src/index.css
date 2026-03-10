@@ -8,7 +8,15 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;   /* Prevent bottom slider */
-  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-roboto);
   scroll-behavior: smooth;
+}
+
+/* Custom Selection Color */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg);
 }

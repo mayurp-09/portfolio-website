@@ -1,14 +1,14 @@
 [
   {
     "title": "Frontend Developer Certificate",
-    "image": "/assets/certificates/Frontend.png"
+    "image": "certificates/Frontend.png"
   },
   {
     "title": "SQL Certificate",
-    "image": "/assets/certificates/SQL.png"
+    "image": "certificates/SQL.png"
   },
   {
     "title": "Java Certificate",
-    "image": "/assets/certificates/Java.png"
+    "image": "certificates/Java.png"
   }
 ]

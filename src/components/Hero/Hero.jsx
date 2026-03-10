@@ -9,22 +9,22 @@ export const Hero = () => {
         <h1 className={styles.title}>Hi, I'm Mayur</h1>
 
         <p className={styles.description}>
-          Entry level Software Developer with hands-on experience in React,
-          JavaScript, SQL, and Core Java. Understanding of Data Structures,
-          OOP and DBMS with practical exposure to building front-end projects
-          and writing optimized SQL queries.
+          I am a frontend engineer with a specialty in web accessibility, focused on building pixel-perfect, 
+          intuitive user interfaces. I enjoy working at the intersection of design and engineering, 
+          where great user experience meets robust, clean, and scalable code.
         </p>
 
         <div className={styles.btnContainer}>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mayurgpande@gmail.com" 
           target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>Hire Me</a>
           <a
-            href="/resume.pdf"
+            href="/Resume.pdf"
             target="_blank"
+            download="Mayur_Pande_Resume.pdf"
             rel="noopener noreferrer"
             className={styles.contactBtn}
           >
-            Resume
+          Resume
           </a>
         </div>
       </div>

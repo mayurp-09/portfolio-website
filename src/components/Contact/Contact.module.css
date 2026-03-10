@@ -3,29 +3,35 @@
 .container {
   color: var(--color-text);
   margin-top: 100px;
-  background-color: var(--color-bg);
+  /* Darker background to anchor the page */
+  background-color: #04070b; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 8%;
+  padding: 80px 10%;
   gap: 40px;
   flex-wrap: wrap;
-  overflow: hidden; /* prevent horizontal scroll */
+  overflow: hidden;
+  /* Soft Neon Top Border */
+  border-top: 1px solid rgba(88, 166, 255, 0.2);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Left Text */
 .text h2 {
-  font-size: 32px;
+  color: var(--color-primary); /* Neon Blue */
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   margin-bottom: 12px;
+  text-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
 }
 
 .text p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.5px;
-  opacity: 0.9;
+  color: #c9d1d9; /* Subtle gray-white */
 }
 
 /* Right Links */
@@ -34,7 +40,7 @@
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
-  gap: 18px;
+  gap: 24px;
   padding: 0;
   margin: 0;
 }
@@ -42,57 +48,49 @@
 .link {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
+  transition: transform 0.3s ease;
+}
+
+.link img {
+  width: 30px;
+  height: 30px;
+  /* Gives icons a soft glow */
+  filter: drop-shadow(0 0 5px rgba(88, 166, 255, 0.3));
 }
 
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
-/* ========================= */
-/* RESPONSIVE FIX */
-/* ========================= */
+/* Link Hover Effect */
+.link:hover {
+  transform: translateX(10px);
+}
 
-/* Tablet */
+.link:hover a {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+/* RESPONSIVE FIX */
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    gap: 30px;
-    padding: 40px 6%;
-  }
-
-  .text h2 {
-    font-size: 28px;
-  }
-
-  .text p,
-  .link a {
-    font-size: 14px;
+    padding: 60px 5%;
   }
 
   .links {
     align-items: center;
   }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .container {
-    padding: 32px 5%;
-  }
-
-  .text h2 {
-    font-size: 24px;
-  }
-
-  .text p,
-  .link a {
-    font-size: 13px;
+  
+  .link:hover {
+    transform: scale(1.1); /* Scale instead of translate on mobile */
   }
 }

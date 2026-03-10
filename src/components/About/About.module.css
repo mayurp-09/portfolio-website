@@ -2,27 +2,32 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
+  /* Glassmorphism: Semi-transparent background with a blur */
+  background-color: rgba(22, 27, 34, 0.6); 
+  backdrop-filter: blur(10px);
   border-radius: 16px;
+  /* Soft Neon Border */
+  border: 1px solid rgba(88, 166, 255, 0.2);
   padding: 48px;
   margin-top: 100px;
   margin-left: 8%;
   margin-right: 8%;
   z-index: 1;
-  overflow: hidden; /* prevents horizontal scroll */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Section Title */
 .title {
-  color: var(--color-text);
-  font-size: 24px;
+  color: var(--color-primary); /* Neon Blue */
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 40px;
+  /* Text glow effect */
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
 }
 
-/* Layout */
 .content {
   display: flex;
   flex-direction: row;
@@ -30,112 +35,71 @@
   gap: 40px;
 }
 
-/* Image */
 .aboutImage {
   width: 30%;
   max-width: 320px;
+  /* Adds a subtle outer glow to your image */
+  filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.2));
 }
 
-/* Right side items */
 .aboutItems {
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
-/* Single Item */
 .aboutItem {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  border-radius: 16px;
+  border-radius: 12px;
   list-style: none;
-  padding: 18px;
-
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-
-  background-size: 0 100%;
-  background-repeat: no-repeat;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
   transition: 0.4s ease;
 }
 
+/* The Neon Hover Effect */
 .aboutItem:hover {
-  background-size: 100% 100%;
+  background-color: rgba(88, 166, 255, 0.08);
+  border-color: rgba(88, 166, 255, 0.4);
+  transform: translateX(10px);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
 }
 
-/* Item Title */
 .aboutItem h3 {
-  font-size: 18px;
+  color: var(--color-primary);
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 6px;
 }
 
-/* Item Description */
 .aboutItem p {
   font-size: 15px;
   line-height: 1.6;
-  opacity: 0.9;
+  color: #c9d1d9; /* Slightly dimmer white for better readability */
 }
 
-/* ========================= */
-/* RESPONSIVE FIX START */
-/* ========================= */
-
-/* Tablet */
+/* RESPONSIVE FIXES */
 @media (max-width: 1024px) {
   .container {
     margin-left: 5%;
     margin-right: 5%;
     padding: 40px;
   }
-
-  .aboutImage {
-    width: 35%;
-  }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .container {
-    padding: 30px;
-    margin-top: 60px;
-  }
-
   .content {
-    flex-direction: column;  /* stack image + content */
-    align-items: center;
+    flex-direction: column;
     text-align: center;
-    gap: 30px;
   }
-
-  .aboutImage {
-    width: 60%;
-    max-width: 260px;
-  }
-
-  .aboutItems {
-    width: 100%;
-    gap: 20px;
-  }
-
+  
   .aboutItem {
-    flex-direction: column; /* stack icon + text */
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
     padding: 16px;
-  }
-
-  .aboutItem h3 {
-    font-size: 16px;
-  }
-
-  .aboutItem p {
-    font-size: 14px;
   }
 }

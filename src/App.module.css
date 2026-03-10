@@ -1,8 +1,14 @@
-@import "./vars.css";
-
 .App {
   background-color: var(--color-bg);
   width: 100%;
-  min-height: 100vh;     /* full screen height properly */
-  overflow-x: hidden;    /* prevents horizontal scroll only */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Simple fade-in animation for the whole site */
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

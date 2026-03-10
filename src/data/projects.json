@@ -1,26 +1,27 @@
 [
   {
+    "title": "AI Resume Analyzer",
+    "imageSrc": "projects/resume_analyzer.png",
+    "description": "AI-powered Resume Analyzer built with React and Puter.js. Features a high-end Neon UI, real-time PDF parsing, and ATS-compatibility scoring.",
+    "skills": ["React", "Javascript", "Tailwind CSS", "PuterJS", "PDF.js", "Vite", "Git", "Github"],
+    "demo": "https://mayurp-09.github.io/image-editor/",
+    "source": "https://github.com/mayurp-09/AI_Resume_Analyzer"
+  },
+  {
     "title": "M_Store",
-    "imageSrc": "projects/ecom.jpg",
+    "imageSrc": "projects/m_store.png",
     "description": "A responsive e-commerce website built using HTML, CSS, and JavaScript with product listing and cart functionality.",
-    "skills": ["HTML", "CSS", "Javascript", "Vite"],
+    "skills": ["HTML", "CSS", "Javascript", "Git", "Github", "Vite"],
     "demo": "https://mayurp-09.github.io/m_store/",
     "source": "https://github.com/mayurp-09/m_store"
   },
   {
     "title": "Image Editor",
-    "imageSrc": "projects/editor.png",
+    "imageSrc": "projects/image_editor.png",
     "description": "A web-based image editor built with JavaScript that allows users to upload and apply real-time image adjustments.",
-    "skills": ["HTML", "CSS", "Javascript"],
-    "demo": "https://mayurp-09.github.io/image-editor/",
-    "source": "https://github.com/mayurp-09/image-editor"
-  },
-  {
-    "title": "Image Editor",
-    "imageSrc": "projects/editor.png",
-    "description": "A web-based image editor built with JavaScript that allows users to upload and apply real-time image adjustments.",
-    "skills": ["HTML", "CSS", "Javascript"],
+    "skills": ["HTML", "CSS", "Javascript", "Git", "Github"],
     "demo": "https://mayurp-09.github.io/image-editor/",
     "source": "https://github.com/mayurp-09/image-editor"
   }
+  
 ]

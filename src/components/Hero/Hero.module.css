@@ -5,181 +5,126 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 60px;
-  padding: 0 6%;
+  margin-top: 100px; /* Increased for better spacing from Navbar */
+  padding: 0 10%;
   width: 100%;
   box-sizing: border-box;
   gap: 50px;
   z-index: 1;
 }
 
-/* ================= CONTENT ================= */
-
 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   color: var(--color-text);
-  max-width: 550px;
+  max-width: 600px;
   z-index: 2;
 }
 
-/* Title */
 .title {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
+  line-height: 1.1;
+  margin-bottom: 24px;
   font-family: var(--font-roboto);
-
-  background: linear-gradient(
-    90deg,
-    rgba(138, 43, 226, 1) 0%,
-    rgba(0, 191, 255, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text);
+  /* Highlight "Mayur" with Neon Blue */
 }
 
-/* Description */
+/* Tip: If you want only 'Mayur' to glow, wrap it in a span in Hero.jsx 
+   But for now, let's make the whole title stand out. */
+.title {
+  text-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+}
+
 .description {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
-  margin-bottom: 32px;
-
-  background: linear-gradient(
-    90deg,
-    rgba(138, 43, 226, 1) 0%,
-    rgba(0, 191, 255, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  color: #c9d1d9; /* Clean gray-white for readability */
 }
 
-/* Buttons */
 .btnContainer {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .contactBtn {
   text-decoration: none;
-  border-radius: 50px;
-  font-size: 16px;
+  border-radius: 8px; /* Modern slightly rounded corners instead of pill */
+  font-size: 18px;
   font-weight: 600;
-  padding: 12px 26px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-
-  background: linear-gradient(
-    90deg,
-    rgba(138, 43, 226, 1) 0%,
-    rgba(0, 191, 255, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+  padding: 14px 32px;
   transition: all 0.3s ease;
+  
+  /* Neon Button Style */
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
 }
 
 .contactBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+  background: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.5);
 }
 
-/* ================= IMAGE ================= */
+/* Secondary Button (Resume) - making it look different */
+.contactBtn:last-child {
+  background: transparent;
+  border-color: #f0f6fc;
+  color: #f0f6fc;
+  box-shadow: none;
+}
+
+.contactBtn:last-child:hover {
+  background: #f0f6fc;
+  color: var(--color-bg);
+}
 
 .heroImg {
-  width: 45%;
-  max-width: 480px;
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  animation: floating 4s ease-in-out infinite;
+  width: 40%;
+  max-width: 450px;
+  filter: drop-shadow(0 0 30px rgba(88, 166, 255, 0.2));
+  animation: floating 5s ease-in-out infinite;
   z-index: 2;
 }
 
-/* Floating Animation */
 @keyframes floating {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(12px); }
+  50% { transform: translateY(-20px); }
   100% { transform: translateY(0px); }
 }
 
-/* ================= BLUR EFFECTS ================= */
-
-.topBlur,
-.bottomBlur {
+/* Modern Glow Backgrounds */
+.topBlur {
   position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: var(--color-secondary);
-  opacity: 0.25;
-  filter: blur(100px);
+  width: 50vw;
+  height: 50vw;
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
   z-index: 0;
 }
 
-.topBlur {
-  top: -80px;
-  left: -120px;
-}
-
-.bottomBlur {
-  top: 200px;
-  right: -120px;
-}
-
-/* ================= RESPONSIVE ================= */
-
+/* Responsive */
 @media (max-width: 1024px) {
-  .title {
-    font-size: 38px;
-  }
-
-  .description {
-    font-size: 16px;
-  }
-
-  .heroImg {
-    width: 50%;
-    max-width: 380px;
-  }
+  .title { font-size: 44px; }
+  .container { padding: 0 5%; }
 }
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse; /* Image on top for mobile */
     text-align: center;
-    align-items: center;
+    margin-top: 60px;
   }
-
-  .content {
-    align-items: center;
-    max-width: 100%;
-  }
-
-  .title {
-    font-size: 30px;
-  }
-
-  .description {
-    font-size: 15px;
-  }
-
-  .btnContainer {
-    justify-content: center;
-  }
-
-  .heroImg {
-    width: 70%;
-    max-width: 300px;
-    margin-top: 30px;
-  }
-
-  /* Hide blur on mobile for safety */
-  .topBlur,
-  .bottomBlur {
-    display: none;
-  }
+  .content { align-items: center; }
+  .title { font-size: 36px; }
+  .heroImg { width: 60%; }
 }

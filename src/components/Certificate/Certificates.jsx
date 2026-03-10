@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Certificates.module.css";
 import certificates from "../../data/certificates.json";
+import { getImageUrl } from "../../utils";
 
 export const Certificates = () => {
   const [current, setCurrent] = useState(0);
@@ -24,7 +25,7 @@ export const Certificates = () => {
 
         <div className={styles.card}>
           <img
-            src={certificates[current].image}
+            src={getImageUrl(certificates[current].image)}
             alt={certificates[current].title}
           />
           <h3>{certificates[current].title}</h3>
