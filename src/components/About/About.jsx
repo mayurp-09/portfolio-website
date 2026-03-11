@@ -37,7 +37,7 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>Java Programmer</h3>
               <p>
-              Familiar with core Java concepts and building simple programs. 4 star rating in java on HacerRank.
+              Familiar with core Java concepts and building simple programs. 4 star rating in java on HackerRank.
               </p>
             </div>
           </li>
