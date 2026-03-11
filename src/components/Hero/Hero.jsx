@@ -18,7 +18,7 @@ export const Hero = () => {
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mayurgpande@gmail.com" 
           target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>Hire Me</a>
           <a
-            href=".Resume.pdf"
+            href="Resume.pdf"
             target="_blank"
             download="Mayur_Pande_Resume.pdf"
             rel="noopener noreferrer"
