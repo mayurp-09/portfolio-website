@@ -1,13 +1,11 @@
 import styles from "./App.module.css";
+import {Navbar} from "./components/Navbar/Navbar";
 import {Hero} from "./components/Hero/Hero"
 import {About} from "./components/About/About";
-import { Contact } from "./components/Contact/Contact";
-import {Navbar} from "./components/Navbar/Navbar";
 import {Projects} from "./components/Projects/Projects"
 import { Skills } from "./components/Skills/Skills";
 import { Certificates } from "./components/Certificate/Certificates";
-
-
+import { Contact } from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -22,5 +20,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
