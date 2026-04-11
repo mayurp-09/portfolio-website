@@ -22,6 +22,14 @@
     "skills": ["HTML", "CSS", "Javascript", "Git", "Github"],
     "demo": "https://mayurp-09.github.io/image-editor/",
     "source": "https://github.com/mayurp-09/image-editor"
+  },
+  {
+    "title": "NotesApp",
+    "imageSrc": "projects/note_app.png",
+    "description": "“Feature-rich notes app built with React, featuring sticky note UI, dark mode, and localStorage persistence.",
+    "skills": ["React", "Tailwind CSS", "Javascript", "Git", "Github"],
+    "demo": "https://mayurp-09.github.io/NotesApp/",
+    "source": "https://github.com/mayurp-09/NotesApp/"
   }
   
 ]

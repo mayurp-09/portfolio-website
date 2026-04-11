@@ -19,8 +19,7 @@
 }
 
 .projects {
-  display: grid;
-  /* Balanced grid for a professional look */
+  display: grid; /* Balanced grid for a professional look */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
   width: 100%;

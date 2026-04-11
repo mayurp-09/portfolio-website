@@ -3,7 +3,6 @@
 .container {
   color: var(--color-text);
   margin-top: 100px;
-  /* Darker background to anchor the page */
   background-color: #04070b; 
   display: flex;
   justify-content: space-between;
