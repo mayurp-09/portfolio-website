@@ -8,6 +8,14 @@
     "source": "https://github.com/mayurp-09/AI_Resume_Analyzer"
   },
   {
+    "title": " Advanced Image Editor",
+    "imageSrc": "projects/image_editor.png",
+    "description": "Developed and deployed an Advanced Image Editor using React and HTML5 Canvas with real-time filters, presets, and multi-page navigation.",
+    "skills": ["React", "Tailwind CSS", "Javascript", "Git", "Github"],
+    "demo": "https://mayurp-09.github.io/advanced-image-editor/",
+    "source": "https://github.com/mayurp-09/advanced-image-editor"
+  },
+  {
     "title": "M_Store",
     "imageSrc": "projects/m_store.png",
     "description": "A responsive e-commerce website built using HTML, CSS, and JavaScript with product listing and cart functionality.",
